@@ -1,0 +1,35 @@
+# Environment / API keys
+frontend/config.js
+.env
+
+# ===========================
+# Backend (Java Spring Boot)
+# ===========================
+# Build files
+*.class
+*.jar
+target/
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
+
+# Environment / secrets
+backend/.env
+application.properties
+application.yml
+
+# ===========================
+# Eclipse Workspace
+# ===========================
+*.classpath
+*.project
+.settings/
+.metadata/
+
+# ===========================
+# OS files
+# ===========================
+Thumbs.db
+*.log

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Monaco Editor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs/loader.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="top-panel">
+            <select id="languageSelect">
+                <option value="">SELECT LANGUAGE</option>
+                <option value="c">C</option>
+                <option value="java">Java</option>
+                <option value="python">Python</option>
+            </select>
+
+            <!-- Description is required for AI Debug -->
+            <textarea id="description" placeholder="Describe what the program should do (required for AI Debug)"></textarea>
+
+            <button id="runBtn">▶️ Run</button>
+            <button id="runWithInputBtn" style="display:none">▶️ Run with Input</button>
+            <button id="debugBtn">🤖 AI Debug</button>
+        </div>
+        
+        <div class="main-content">
+            <!-- Left pane: Code editor -->
+            <div id="editor"></div>
+            
+            <!-- Resizable divider -->
+            <div class="divider" id="divider"></div>
+
+            <!-- Right pane: Output/Debug -->
+            <div class="output-panel">
+                <div id="output">
+                    <div class="output-header">Output</div>
+                    <div id="output-content"></div>
+
+                    <!-- Inline terminal-style input (hidden until needed) -->
+                    <div id="terminal-input-area" style="display:none; margin-top:12px;">
+                        <div class="terminal-label">Program input (stdin):</div>
+                        <textarea id="terminal-input" placeholder="Enter input for program (e.g. `2 3` then newline)"></textarea>
+                        <div style="margin-top:8px;">
+                            <button id="sendInputBtn">Run with Input</button>
+                            <button id="cancelInputBtn">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="debug-panel" style="display: none;">
+                    <div class="debug-header">AI Debug Suggestions</div>
+                    <div id="corrected-code"></div>
+                    <div id="explanation"></div>
+                    <button id="replaceBtn">✅ Replace Code</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
