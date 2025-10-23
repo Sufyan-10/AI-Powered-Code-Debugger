@@ -35,9 +35,10 @@ AI-Powered-Code-Debugger/
 
 1. **Clone the repository:**
 ```bash
+1. Clone the repository
 git clone https://github.com/Sufyan-10/AI-Powered-Code-Debugger.git
 
-2. **Navigate to the backend folder and install dependencies:**
+2. Navigate to the backend folder and install dependencies:
 cd backend
 mvn clean install
 
